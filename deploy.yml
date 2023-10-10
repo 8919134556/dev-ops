@@ -1,6 +1,8 @@
 ---
 - name: Deploy Sample Web Project
   hosts: dev
+  vars:
+    ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
   tasks:
     - name: Copy index.html to the target directory
       copy:

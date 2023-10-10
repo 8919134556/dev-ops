@@ -1,0 +1,13 @@
+---
+- name: Deploy Sample Web Project
+  hosts: your_target_hosts
+  tasks:
+  - name: Ensure docker is installed
+    apt:
+      name: docker.io
+      state: present
+  - name: Start container
+    docker_container:
+      name: web_container
+      image: sample-web-project
+      state: started
